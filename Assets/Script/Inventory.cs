@@ -9,7 +9,12 @@ public class Inventory : MonoBehaviour
 
     private void Awake()
     {
-        ActionNode actionNode = new(CheckInventoryForMeat);
+        ActionNode actionNodeMeat = new(CheckInventoryForMeat);
+        ActionNode actionNodeVegs = new(CheckInventoryForVegs);
+        ActionNode actionNodeFruits = new(CheckInventoryForFruits);
+        items.Add("Meat");
+        items.Add("Vegs");
+        items.Add("Fruits");
     }
     public bool ContainsItem(string id)
     {
@@ -19,6 +24,22 @@ public class Inventory : MonoBehaviour
     public NodeState CheckInventoryForMeat()
     {
         if (items.Contains("Meat"))
+            return NodeState.SUCCESS;
+        else
+            return NodeState.FAILURE;
+    }
+
+    public NodeState CheckInventoryForVegs()
+    {
+        if (items.Contains("Vegs"))
+            return NodeState.SUCCESS;
+        else
+            return NodeState.FAILURE;
+    }
+
+    public NodeState CheckInventoryForFruits()
+    {
+        if (items.Contains("Fruits"))
             return NodeState.SUCCESS;
         else
             return NodeState.FAILURE;

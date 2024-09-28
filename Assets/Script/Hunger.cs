@@ -94,6 +94,11 @@ public class Hunger : MonoBehaviour
             OnHungerDepleted();
         }
     }
+
+    public bool IsHungry()
+    {
+        return CurrentHunger <= maxHunger/2;
+    }
     /*
     public void SetHungerDepletedCallback(System.Action callback)
     {

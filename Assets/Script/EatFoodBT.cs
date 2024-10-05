@@ -28,8 +28,8 @@ public class EatFoodBT : MonoBehaviour
         hunger = GetComponent<Hunger>();
         inventory = GetComponent<Inventory>();
         awareness = GetComponent<Awareness>();
-        Player player = GetComponent<Player>();
-        Enemy enemy = GetComponent<Enemy>();
+        // Player player = GetComponent<Player>();
+        // Enemy enemy = GetComponent<Enemy>();
     }
 
     private void Start()

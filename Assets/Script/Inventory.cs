@@ -16,6 +16,14 @@ public class Inventory : MonoBehaviour
         return (items.Contains(id));
     }
 
+    public NodeState CheckInventory(string item)
+    {
+        Debug.Log(items.Contains(item));
+        return items.Contains(item) ?
+            NodeState.SUCCESS :
+            NodeState.FAILURE;
+    }
+
     public NodeState CheckInventoryForMeat()
     {
         if (items.Contains("Meat"))

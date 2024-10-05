@@ -1,0 +1,10 @@
+tree("Root")
+	sequence
+		CheckHunger
+		fallback
+			CheckMeat
+			CheckVegs
+			CheckFruit
+		not
+			CheckEnemy
+		Feed(100)

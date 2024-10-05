@@ -77,8 +77,36 @@ public class EatFoodBT : MonoBehaviour
         return hunger.IsHungry() ? NodeState.SUCCESS : NodeState.FAILURE;
     }
     
+<<<<<<< Updated upstream
     private NodeState Eat(){
         hunger.SetHunger(100);
+=======
+
+    private NodeState CheckForMeat()
+    {
+        //return inventory.CheckInventory("Meat");
+        return inventory.CheckInventoryForMeat();
+    }
+
+    private NodeState CheckForVegetables()
+    {
+        return inventory.CheckInventoryForVegs();
+    }
+    private NodeState CheckForFruits()
+    {
+        return inventory.  CheckInventoryForFruits();
+    }
+
+    private NodeState CheckForEnemies()
+    {
+        return awareness.IsEnemyAround() ?
+            NodeState.SUCCESS :
+            NodeState.FAILURE;
+    }
+    private NodeState EatFood()
+    {
+        hunger.Eat(100);
+>>>>>>> Stashed changes
         return NodeState.SUCCESS;
     }
     private NodeState CheckEnemy(){

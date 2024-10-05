@@ -99,6 +99,34 @@ public class Hunger : MonoBehaviour
     {
         return CurrentHunger <= maxHunger/2;
     }
+<<<<<<< Updated upstream
+=======
+
+    public void Eat(int value)
+    {
+        CurrentHunger += value;
+    }
+
+    [Task]
+    public void CheckHunger()
+    {
+        if (IsHungry())
+        {
+            Task.current.Succeed();
+        }
+        else
+        {
+            Task.current.Fail();
+        }
+    }
+
+    [Task]
+    public void Feed(int value){
+        CurrentHunger += value;
+        Task.current.Succeed();
+    }
+
+>>>>>>> Stashed changes
     /*
     public void SetHungerDepletedCallback(System.Action callback)
     {

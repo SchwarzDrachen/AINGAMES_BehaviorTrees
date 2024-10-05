@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Panda;
 
 public class Inventory : MonoBehaviour
 {
@@ -44,4 +45,33 @@ public class Inventory : MonoBehaviour
         else
             return NodeState.FAILURE;
     }
+<<<<<<< Updated upstream
+=======
+
+    [Task]
+    public void CheckMeat(){
+        if (items.Contains("Meat")){
+            Task.current.Succeed();
+        }
+        else{
+            Task.current.Fail();
+        }
+    }
+
+    [Task]
+    public void CheckVegs(){
+        if (items.Contains("Vegs"))
+            Task.current.Succeed();
+        else
+            Task.current.Fail();
+    }
+
+    [Task]
+    public void CheckFruit(){
+        if (items.Contains("Fruits"))
+            Task.current.Succeed();
+        else
+            Task.current.Fail();
+    }
+>>>>>>> Stashed changes
 }

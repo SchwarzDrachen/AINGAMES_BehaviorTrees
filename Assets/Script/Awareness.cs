@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Panda;
 public class Awareness : MonoBehaviour
 {
     [SerializeField]
@@ -27,5 +27,17 @@ public class Awareness : MonoBehaviour
         }
         return false;
     }
-   
+
+    [Task]
+    public void CheckEnemy(){
+         for(int i = 0; i < enemies.Count; i++)
+        {
+            if (Vector3.Distance(transform.position, enemies[i].transform.position) < detectRange)
+            {
+                Debug.Log("near the enemy!");
+                Task.current.Succeed();
+            } 
+        }
+        Task.current.Fail();
+    }
 }
